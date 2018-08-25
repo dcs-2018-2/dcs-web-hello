@@ -19,6 +19,7 @@ public class OlaServlet extends HttpServlet {
             nome = "mundo";
         }
 
+        resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.println("Olá, <strong>" + nome + "</strong>!");
     }
