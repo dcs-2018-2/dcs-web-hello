@@ -13,8 +13,10 @@ public class OlaServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String nome = req.getParameter("nome");
+
         PrintWriter out = resp.getWriter();
-        out.println("Olá, mundo!");
+        out.println("Olá, " + nome + "!");
     }
 
 }
