@@ -20,7 +20,7 @@ public class OlaServlet extends HttpServlet {
         }
 
         PrintWriter out = resp.getWriter();
-        out.println("Olá, " + nome + "!");
+        out.println("Olá, <strong>" + nome + "</strong>!");
     }
 
 }
