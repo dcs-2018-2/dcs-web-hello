@@ -21,7 +21,20 @@ public class OlaServlet extends HttpServlet {
 
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("Olá, <strong>" + nome + "</strong>!");
+        out.println("Olá, <strong>" + nome + "</strong>! (via GET)");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String nome = req.getParameter("nome");
+
+        if (nome == null || nome.trim().isEmpty()) {
+            nome = "mundo";
+        }
+
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.println("Olá, <strong>" + nome + "</strong>! (via POST)");
     }
 
 }
